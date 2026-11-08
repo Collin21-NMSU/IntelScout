@@ -1,7 +1,7 @@
 ![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?style=flat&logo=dotnet&logoColor=white)
 ![C# 13](https://img.shields.io/badge/C%23-13-239120?style=flat&logo=csharp&logoColor=white)
 ![Spectre.Console](https://img.shields.io/badge/UI-Spectre.Console-blue?style=flat)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 
 **IntelScout** is a lightweight, asynchronous C# threat intelligence CLI engine targeting **.NET 10**. Designed for rapid incident response and network telemetry, it interfaces directly with the AbuseIPDB v2 REST API to evaluate IP indicators of compromise in real time.
 
