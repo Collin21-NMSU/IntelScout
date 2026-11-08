@@ -22,7 +22,7 @@ It supports both terminal queries and batch text-file target lists, using `Spect
 
 ```mermaid
 flowchart TD
-    subgraph Input Layer
+    subgraph Input ["Input Layer"]
         A[CLI Arguments] --> D{Input Type?}
         B[Target File] --> D
         C[Default Sample IPs] --> D
@@ -46,3 +46,11 @@ flowchart TD
         J & K & L --> M[Spectre.Console Table]
         M --> N[Rendered Terminal Output]
     end
+```
+## Verification & Testing
+To execute the built-in test suite and verify assembly compilation under .NET 10:
+* An **AbuseIPDB Account**: If you don't have one, register for a free account at [AbuseIPDB](https://www.abuseipdb.com/) to generate your API key.
+
+```bash
+dotnet build --configuration Release
+dotnet run -- 1.1.1.1 8.8.8.8
