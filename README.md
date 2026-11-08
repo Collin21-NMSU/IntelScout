@@ -24,25 +24,25 @@ It supports both terminal queries and batch text-file target lists, using `Spect
 flowchart TD
     subgraph Input Layer
         A[CLI Arguments] --> D{Input Type?}
-        B[Target File --file] --> D
+        B[Target File] --> D
         C[Default Sample IPs] --> D
     end
 
-    subgraph Core Orchestrator (Program.cs)
+    subgraph Core ["Core Orchestrator - Program.cs"]
         D -->|Valid Targets| E[Execution Engine]
     end
 
-    subgraph Service Layer (AbuseIpDbService)
-        E -->|Async GET Request + API Key| F[AbuseIPDB v2 REST API]
+    subgraph Service ["Service Layer - AbuseIpDbService"]
+        E -->|Async GET Request| F[AbuseIPDB API]
         F -->|JSON Payload| G[JsonDocument Parser]
         G -->|Mapped POCO| H[IpResult Object]
     end
 
-    subgraph Presentation Layer (ConsoleRenderer)
-        H -->|Risk Score Evaluation| I{Score Range?}
-        I -->|"> 50%"| J[Bold Red Markup]
-        I -->|"< 15%"| K[Yellow Markup]
-        I -->|"Default"| L[Green Markup]
+    subgraph UI ["Presentation Layer - ConsoleRenderer"]
+        H -->|Evaluate Score| I{Score Range}
+        I -->|High Risk| J[Bold Red Markup]
+        I -->|Low Risk| K[Yellow Markup]
+        I -->|Safe| L[Green Markup]
         J & K & L --> M[Spectre.Console Table]
         M --> N[Rendered Terminal Output]
     end
