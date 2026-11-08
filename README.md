@@ -49,7 +49,7 @@ flowchart TD
 ```
 ## Verification & Testing
 To execute the built-in test suite and verify assembly compilation under .NET 10:
-- ** An **AbuseIPDB Account**: If you don't have one, register for a free account at [AbuseIPDB](https://www.abuseipdb.com/) to generate your API key.
+- An **AbuseIPDB Account**: If you don't have one, register for a free account at [AbuseIPDB](https://www.abuseipdb.com/) to generate your API key.
 
 ```bash
 dotnet build --configuration Release
