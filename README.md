@@ -7,6 +7,8 @@
 
 It supports both terminal queries and batch text-file target lists, using `Spectre.Console` to render execution spinners and styled console reporting.
 
+![IntelScout CLI Demo](IntelScoutDemo.png)
+
 ---
 
 ## Technical Highlights
